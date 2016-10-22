@@ -1,0 +1,22 @@
+# Ruby - Concordance
+# handle trimming string 'for characters; periods, etc'
+
+puts "Enter words:"
+text = gets.chomp
+words = text.split(",") #trim space needed
+frequencies = Hash.new(0)
+
+words.each do |x| 
+    frequencies[x] += 1 
+    
+end
+
+frequencies = frequencies.sort_by do |word, count|
+    count 
+end
+
+frequencies.reverse!
+
+frequencies.each do |f, count|
+    puts f + " " + count.to_s
+end

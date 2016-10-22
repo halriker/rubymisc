@@ -1,0 +1,19 @@
+puts "beginning test..." 
+
+puts "Enter a root keyword:" 
+
+root_keywords = {
+	drum: 100,
+	can: 50
+	}
+
+keyword = gets.chomp
+
+	if root_keywords[keyword.to_sym].nil?
+		puts "Adding #{keyword} to database..."
+		root_keywords["#{keyword}"] = 700
+	else 
+		puts "#{keyword} exists, not adding to database"	
+	end
+
+puts root_keywords.each {|k, v| print "#{k}:", + " " + "#{v}\n"}
